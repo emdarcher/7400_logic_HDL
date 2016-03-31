@@ -3,7 +3,7 @@
 TARGET = ic_7474
 TB = ic_7474_tb.v
 
-test:
+tb:
 	iverilog -o $(TARGET).vvp $(TARGET).v $(TB)
 	vvp $(TARGET).vvp
 

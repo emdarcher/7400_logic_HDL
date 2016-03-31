@@ -14,26 +14,26 @@ ic_7474 uut(
     CP[1], D[1], SD[1], RD[1]
 );
 initial begin
-    RD = 0;
-    CP = 0;
+    RD = 2'b00;
+    CP = 2'b00;
     forever #10 CP = ~CP; //toggle CP (clock) every 10ns
 end
 initial begin
     //init inputs
-    D = 0;
-    SD = 1;
+    D = 2'b00;
+    SD = 2'b11;
     //wait for global reset
-    #100
+    #40
 
     //forever #10 CP = ~CP; //toggle CP (clock) every 10ns
 
-    #20 RD = 1;D = 1;
-    #20 D = 0;
-    #20 D = 1;
-    #20 RD = 0;
-    #5 SD = 0;
-    #15 RD = 1;
-    #20 SD = 1;
+    #20 RD =2'b11;D = 2'b11;
+    #20 D = 2'b00;
+    #20 D = 2'b11;
+    #20 RD = 2'b00;
+    #5 SD = 2'b00;
+    #15 RD = 2'b11;
+    #20 SD = 2'b11;
     #40 $finish;
 end
 //no make the file
